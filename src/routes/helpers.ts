@@ -1,6 +1,11 @@
 export const pathsPublic: { [k: string]: string } = {
   home: "/",
+  login: "/login",
+  register: "/register",
+  logout: "/logout",
   productDetails: "/product/:idOrSlug",
+  favorites: "/favorites",
+  cart: "/cart",
 };
 
 export const pathsPrivate: { [k: string]: string } = {
