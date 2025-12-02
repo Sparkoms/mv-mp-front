@@ -20,11 +20,13 @@ import logoPng from "../../img/logo.png";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import UserDropDownMenu from "./UserDropdownMenu";
+import { selectFavorites } from "../Favorites/selectors";
 
 const Header: React.FC = () => {
   const location = useLocation();
 
   const isLogged = useSelector(selectIsLogged);
+  const favorites = useSelector(selectFavorites);
 
   const [searchInput, setSearchInput] = useState<string>("");
   const changeSearchInput = useCallback(
@@ -69,7 +71,7 @@ const Header: React.FC = () => {
         {isLogged ? (
           <>
             <BtnOrders />
-            <BtnFavorites />
+            <BtnFavorites count={favorites.length} />
             <BtnNotifications />
             <BtnCart />
             <UserDropDownMenu />
